@@ -37,6 +37,9 @@ class PostsController < ApplicationController
     redirect_to posts_path, notice:"つぶやきを削除しました！"
   end
 
+  def confirm
+    @post = Post.new(post_params)
+  end
 
 
 

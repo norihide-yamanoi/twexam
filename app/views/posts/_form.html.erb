@@ -1,4 +1,4 @@
-<%= form_with(model: @post, local: true) do |form| %>
+<%= form_with(model: @post, local: true ,url: confirm_posts_path ) do |form| %>
 <% if @post.errors.any? %>
   <div class="error_explanation">
     <h2>１文字以上、１４０字以内でつぶやいてください。</h2>
@@ -11,3 +11,5 @@
   </div>
   <%= form.submit %>
 <% end %>
+
+<%= link_to "つぶやき一覧画面にもどる", posts_path %>
