@@ -11,6 +11,7 @@
 
     <td><%= link_to 'つぶやきを確認する', post_path(post.id) %></td>
     <td><%= link_to "つぶやきを編集する", edit_post_path(post.id) %></td>
+    <td><%= link_to 'つぶやきを削除する', post_path(post.id), method: :delete ,data: { confirm: '本当に削除していいですか？' }  %></td>
   </tr>
 <% end %>
 </table>

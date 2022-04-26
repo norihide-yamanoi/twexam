@@ -1,13 +1,3 @@
-<%= form_with(model: @post, local: true) do |form| %>
-<% if @post.errors.any? %>
-  <div class="error_explanation">
-    <h2>１文字以上、１４０字以内でつぶやいてください。</h2>
-  </div>
- <% end %>
+<h2>つぶやく</h2>
 
-  <div class="post_content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-  <%= form.submit %>
-<% end %>
+<%= render 'form' %>
