@@ -1,21 +1,32 @@
-<h1>つぶやき一覧</h1>
+<body>
+  <header>
+    <h1>つぶやき一覧</h1>
+  </header>
 
-<p><%= notice %></p>
+  <div class="img">
+    <%= image_tag 'bird.png' %>
+  </div>
 
-<table>
-  <tr>
-    <th>内容</th>
-  </tr>
+  <p class=notice><%= notice %></p>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.content %></td>
+  <section>
+    <table>
+      <tr>
+        <th>内容</th>
+      </tr>
 
-    <td><%= link_to 'つぶやきを確認する', post_path(post.id) %></td>
-    <td><%= link_to "つぶやきを編集する", edit_post_path(post.id) %></td>
-    <td><%= link_to 'つぶやきを削除する', post_path(post.id), method: :delete ,data: { confirm: '本当に削除していいですか？' }  %></td>
-  </tr>
-<% end %>
-</table>
+      <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.content %></td>
+        <td><%= link_to 'つぶやきを確認する', post_path(post.id) %></td>
+        <td><%= link_to "つぶやきを編集する", edit_post_path(post.id) %></td>
+        <td><%= link_to 'つぶやきを削除する', post_path(post.id), method: :delete ,data: { confirm: '本当に削除していいですか？' }  %></td>
+      </tr>
+    <% end %>
+    </table>
+  </section>
 
-<%= link_to '新しくつぶやく', new_post_path %>
+  <footer>
+      <%= link_to '新しくつぶやく', new_post_path %>
+  </footer>
+</body>

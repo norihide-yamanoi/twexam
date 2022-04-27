@@ -46,8 +46,6 @@ class PostsController < ApplicationController
     render :new if @post.invalid?
   end
 
-
-
   private
 
   def  post_params
@@ -57,5 +55,5 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find(params[:id])
   end
-
+  
 end
